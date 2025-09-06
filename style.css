@@ -166,6 +166,10 @@ object-fit: cover;
 .catao {
     width: 200px;
 }
+.cartao a {
+    text-decoration: none;
+    color: black;
+}
 
 .anoDirecao {
     text-align: left;
@@ -199,7 +203,7 @@ object-fit: cover;
     font-size: 25px;
 }
 .cartao .info div:nth-child(3) a {
-    background-color: aqua;
+    background-color: #16e094;
     border-radius: 10px;
     padding: 5px 15px 5px 15px;
 }
