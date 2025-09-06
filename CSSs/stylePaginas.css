@@ -1,0 +1,180 @@
+main {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+#texto {
+    width: 25%;
+}
+body {
+    margin: 0;
+    top: 0;
+    padding: 0;
+    background-color: #2e3323;
+    animation-name: entrada;
+    animation-duration: 1s;
+}
+#imagem {
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px;
+}
+#video {
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px;
+}
+#avaliacao {
+    display: flex;
+}
+#numero {
+    margin-left: 5px;
+}
+span {
+    font-size: 30px;
+    font-weight: bold;
+}
+#info {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+#divinfo {
+    overflow-y: auto;
+    height: 280px;
+}
+#ava {
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    left: 15px;
+}
+#texto {
+    height: 370px;
+    background-color: #16e094;
+    width: 25%;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 10px 10px 20px black;
+}
+#comeco {
+    margin-top: -30px;
+    margin-left: 110px;
+}
+header {
+    background-color: #16e094;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+nav {
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+    font-size: 20px;
+}
+footer {
+    background-color: #16e094;
+    position: absolute;
+    width: 98.7%;
+    bottom: 0;
+    padding: 10px;
+}
+#fim {
+    margin-left: 40px;
+}
+.link {
+    text-decoration: none;
+    background-color: #16e0d9;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.link:hover {
+    background-color: #15b8b2;
+    color: rgb(224, 214, 214)
+}
+@keyframes entrada {
+    from {
+        margin-left: -2000px;
+    }
+    to {
+        margin-left: 0px;
+    }
+}
+#tv {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+
+#tv:hover {
+    animation: gira 1s infinite;
+}
+@keyframes gira {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg
+    }
+}
+#barco {
+    margin-top: 5px;
+    margin-left: -90px;
+    position: absolute;
+    animation: anda 10s,balanco 3s infinite;
+}
+@keyframes anda {
+    from {
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 1540px;
+    }
+}
+@keyframes balanco {
+    0% {
+        margin-top: 10px;
+    }
+    10% {
+        margin-top: 6px;
+    }
+    20% {
+        margin-top: 2px;
+        rotate: -3deg;
+    }
+    30% {
+        rotate: -9deg;
+    }
+    40% {
+        rotate: -15deg;
+    }
+    50% {
+        margin-top: -10px;
+        rotate: -9deg;
+    }
+    60% {
+        margin-top: -5px;
+        rotate: 0deg;
+    }
+    70% {
+        rotate: 3deg;
+    }
+    80% {
+        rotate: 6deg;
+    }
+    90% {
+        rotate: 8deg;
+        margin-top: 5px;
+    }
+    100% {
+        rotate: 10deg;
+        margin-top: 10px;
+    }
+}

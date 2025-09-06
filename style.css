@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    top: 0;
+    padding: 0;
+}
+header {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+header div:nth-child(1) {
+    display: flex;
+}
+#opcoes {
+    display: flex;
+    position: absolute;
+    top: 32px;
+    right: 30px;
+}
+#opcoes a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: black;
+}
+#opcoes #login {
+    background-color: #16e094;
+    padding: 8px 15px 8px 15px;
+    border-radius: 10px;
+}
+#opcoes #login:hover {
+    background-color: #19c986;
+}
+#limaFlix {
+    position: relative;
+    color: #16e094;
+    left: 20px;
+    top: -20px;
+}
+#limaFlix img {
+    position: relative;
+    right: 14px;
+    top: 3px;
+}
+
+.carrosel {
+    margin: 50px 0 0 180px;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slides {
+display: flex;
+width: calc(400px * 10); 
+animation: slide 30s infinite;
+}
+
+@keyframes slide {
+    0%   { transform: translateX(0); }
+    10%  { transform: translateX(0); }
+
+    10%  { transform: translateX(-400px); }
+    20%  { transform: translateX(-400px); }
+
+    20%  { transform: translateX(-800px); }
+    30%  { transform: translateX(-800px); }
+
+    30%  { transform: translateX(-1200px); }
+    40%  { transform: translateX(-1200px); }
+
+    40%  { transform: translateX(-1600px); }
+    50%  { transform: translateX(-1600px); }
+
+    50%  { transform: translateX(-2000px); }
+    60%  { transform: translateX(-2000px); }
+
+    60%  { transform: translateX(-2400px); }
+    70%  { transform: translateX(-2400px); }
+
+    70%  { transform: translateX(-2800px); }
+    80%  { transform: translateX(-2800px); }
+
+    80%  { transform: translateX(-3200px); }
+    90%  { transform: translateX(-3200px); }
+
+    90%  { transform: translateX(-3600px); }
+    100% { transform: translateX(-3600px); }
+}
+
+.slides div {
+width: 400px;
+height: 250px;
+object-fit: cover;
+}
+.slides img {
+    margin-left: 20px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+#inicio {
+    display: flex;
+    margin-bottom: 85px;
+}
+#inicio #texto {
+    margin-left: 150px;
+}
+#inicio #texto h1 {
+    font-size: 70px;
+    margin-top: 70px;
+    color: #16e094;
+}
+#inicio #texto p {
+    width: 560px;
+    text-align: justify;
+    font-size: 22px;
+}
+#filmes {
+    text-align: center;
+    font-size: 18px;
+}
+#filmes h1:nth-child(1) {
+    color: #16e094;
+}
+#container {
+    display: grid;
+    width: 1150px;
+    gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    margin: auto;
+    position: relative;
+}
+#container img {
+    width: 200px;
+    border-radius: 10px;
+}
+#container .cartao {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+#container .info {
+        position: absolute;
+        top: 0;
+        left: 140px;
+        width: 180px;
+        height: 266px;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        margin-left: -140px;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        transform: translateY(40px);
+}
+
+#container .cartao:hover .info {
+    opacity: 1;
+    transform: translateY(0);
+    display: grid;
+    grid-template-rows: 60px 145px 100px;
+    z-index: 2;
+}
+.catao {
+    width: 200px;
+}
+
+.anoDirecao {
+    text-align: left;
+}
+.avaliacao {
+    display: flex;
+    margin: -10px 0 0 30px;
+    width: 100px;
+}
+
+.estrela {
+    margin: 10px 6px 0 0;
+    width: 40px;
+    height: 40px;
+    background: gold;
+    clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%);
+}
+
+.avaliacao .numero span {
+    font-weight: bold;
+    font-size: 25px;
+}
+.cartao .info div:nth-child(3) a {
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+}
+.cartao .info div:nth-child(3) {
+    margin-top: 10px;
+}
+footer {
+    margin-top: 80px;
+    display: grid;
+    grid-template-rows: 120px 50px;
+}
+footer div:nth-child(1) {
+    background-color: #16e094;
+}
+footer div:nth-child(2) {
+    background-color: #1ad18b;
+    text-align: center;
+}
+#navegacao {
+    background-color: #16e094;
+    display: flex;
+    margin: 10px auto 0 auto;
+    width: 320px;
+}
+#navegacao a {
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+}
+#canais {
+    margin: auto;
+    margin-top: 25px;
+    width: 10px;
+}
+#fazerLogin {
+    width: 1000px;
+    height: 500px;
+    border: 1px solid #16e094;
+    border-radius: 10px;
+}
+#fazerLogin div:nth-child(1) {
+    display: grid;
+    height: 500px;
+}
+#fundoLogin {
+    position: relative;
+    bottom: 16px;
+    right: 16px;
+    z-index: 0;
+    width: 540px;
+    height: 532px;
+    border-radius: solid;
+    border-radius: 10px 0 0 10px;
+}
+#fazerLogin div:nth-child(1) div:nth-child(1) h1 {
+    font-size: 30px;
+    position: relative;
+    width: 150px;
+    bottom: 400px;
+    left: 180px;
+}
+#fazerLogin div p {
+    font-size: 17px;
+    width: 400px;
+    position: relative;
+    bottom: 420px;
+    left: 80px;
+}
+#fazerLogin div:nth-child(1) div:nth-child(2) {
+    position: relative;
+    left: 550px;
+    width: 400px;
+    bottom: 450px;
+}
+#fazerLogin div:nth-child(1) div:nth-child(2) h1 {
+    margin-bottom: 40px;
+    color: #16e094;
+    text-align: center;
+}
+#fazerLogin div:nth-child(1) div:nth-child(2) input {
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+    margin-bottom: 40px;
+}
+#fazerLogin div:nth-child(1) div:nth-child(2) a {
+    background-color: #16e094;
+    padding: 10px 20px 10px 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+#fazerLogin div:nth-child(1) div:nth-child(2) form {
+    width: 290px;
+    margin: auto;
+    text-align: center;
+}
+#sairLogin {
+    width: 24px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 880px;
+    left: 975px;
+    cursor: pointer;
+}
+#nomeConta img {
+    width: 23px;
+    position: relative;
+    top: 6px;
+}
+#nomeConta {
+    margin: -8px 0 0 10px;
+}
+#fazerLogin span {
+    font-weight: bold;
+    color: rgb(56, 56, 251);
+}
+#semConta {
+    margin-top: 450px;
+    margin-left: -120px;
+}

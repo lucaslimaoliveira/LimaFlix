@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimaFlix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="cabeca">
+            <div id="limaFlix">
+                <h1>LimaFlix<img src="imagens/favicon.ico" alt=""></h1>
+            </div> 
+            <div id="opcoes">
+                <a href="#inicio">Inicio</a>
+                <a href="#filmes">Filmes</a>
+                <div id="conta">
+                    <a id="login" onclick="document.getElementById('fazerLogin').showModal()">Login</a>
+                    <dialog id="fazerLogin">
+                        <div>
+                            <div>
+                                <img id="fundoLogin" src="imagens/fundo do site Germina Tech.png" alt="">
+                                <h1>Faça login</h1>
+                                <p>E conheça o melhor catalogo de filmes na LimaFlix</p>
+                            </div>
+                            <div>
+                                <h1>Entre</h1>
+                                <form>
+                                    <input type="text" id="usuario" placeholder="Usuario">
+                                    <input type="text" id="senha" placeholder="Senha">
+                                    <a onclick="document.getElementById('usuario').value != '' && document.getElementById('senha').value != '' ? conta() : alert('Preencha os campos de usuario e senha') ">Entrar</a>
+                                </form>
+                            </div>
+                            <a onclick="document.getElementById('fazerLogin').close()" id="sairLogin">
+                                <h1>X</h1>
+                            </a>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="inicio">
+            <div class="carrosel">
+                <div class="slides">
+                    <div><img src="imagens/Batman o caveleiro das trevas.png" alt=""></div>
+                    <div><img src="imagens/detetive_pikachu.png" alt=""></div>
+                    <div><img src="imagens/interstellar.png" alt=""></div>
+                    <div><img src="imagens/mario Bros.png" alt=""></div>
+                    <div><img src="imagens/matrix.png" alt=""></div>
+                    <div><img src="imagens/minecraft.png" alt=""></div>
+                    <div><img src="imagens/one piece.png" alt=""></div>
+                    <div><img src="imagens/Senhor dos aneis.png" alt=""></div>
+                    <div><img src="imagens/Star Wars - EpisódioV.png" alt=""></div>
+                    <div><img src="imagens/um sonho de liberdade.png" alt=""></div>
+                </div>
+            </div>
+            <div id="texto">
+                <h1>LimaFlix</h1>
+                <p>No LimaFlix, você encontra um catálogo completo de filmes para todos os gostos, desde os grandes sucessos de bilheteria até produções independentes que merecem destaque. Nossa missão é levar entretenimento de qualidade direto para você, permitindo que explore um catálogo atualizado com diferentes gêneros como ação, comédia, drama, terror e muito mais, receba recomendações personalizadas baseadas no que você já assistiu ou no que está em alta entre os usuários, e descubra novidades e clássicos que nunca saem de moda. Prepare a pipoca, escolha seu filme favorito e aproveite a experiência única que só o LimaFlix oferece.</p>
+            </div>
+        </div>
+        <div id="filmes">
+            <h1>Filmes e séries</h1>
+            <div id="container">
+                <div class="cartao">
+                    <img src="imagens/Batman o caveleiro das trevas.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Batman: O Cavaleiro das Trevas</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2008 <br>Direção: Christopher Nolan</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>9,0</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/detetive_pikachu.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Pokémon: Detetive Pikachu</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2019 <br>Direção: Rob Letterman</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>8,0</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/interstellar.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Interestelar</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2014 <br>Direção: Christopher Nolan</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>8,5</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/mario Bros.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Super Mario Bros</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2023 <br>Direção: Aaron Horvath</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>8,5</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/matrix.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Matriz</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2023 <br>Direção: Irmãs Wachowski</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>7,5</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/minecraft.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Um Filme Minecraft</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 2025 <br>Direção: Jared Hess</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>9,0</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/one piece.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>One Piece</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 1997 <br>Direção: Eiichiro Oda</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>10</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/Senhor dos aneis.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>O Senhor dos Anéis: O Retorno do Rei</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 1997 <br>Direção: Peter Jackson</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>8,0</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/Star Wars - EpisódioV.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Star Wars: Episódio V</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 1980 <br>Direção: Irvin Kershner</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>8,5</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao">
+                    <img src="imagens/um sonho de liberdade.png" alt="">
+                    <div class="info">
+                        <div>
+                            <h4>Um Sonho de Liberdade</h4>
+                        </div>
+                        <div class="anoDirecao">
+                            <h5>Lançado: 1994 <br>Direção: Frank Darabont</h5>
+                            <div class="avaliacao">
+                                <div class="estrela"></div>
+                                <p class="numero"><span>9,0</span>/10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a>Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div id="canais">
+                <a href="https://github.com/lucaslimaoliveira"><img width="35px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" /></a>
+            </div>
+            <div id="navegacao">
+                <a href="">Contato</a>
+                <a href="https://github.com/lucaslimaoliveira">GitHub</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#filmes">Filmes</a>
+            </div>
+        </div>
+        <div>
+            <p>&reg; Criado em 2025 por Lucas Lima</p>
+        </div>
+    </footer>
+    <script src="scripts/fucao.js"></script>
+</body>
+</html>
