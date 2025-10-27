@@ -170,3 +170,15 @@ hr {
     background-color:black;
     color: white;
 }
+body > a {
+    background-color: red;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    border: 2px black dashed;
+    left: 5px;
+    top: 5px;
+    padding: 5px;
+    border-radius: 10px;
+
+}
