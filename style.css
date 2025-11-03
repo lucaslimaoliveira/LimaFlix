@@ -206,7 +206,13 @@ object-fit: cover;
     background-color: #16e094;
     border-radius: 10px;
     padding: 5px 15px 5px 15px;
+    transition: 0.5s;
 }
+
+.cartao .info div:nth-child(3) a:hover {
+    background-color: #18c784;
+}
+
 .cartao .info div:nth-child(3) {
     margin-top: 10px;
 }

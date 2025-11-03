@@ -12,7 +12,7 @@ body {
     margin: 0;
     top: 0;
     padding: 0;
-    background-color: #2e3323;
+    background-color: white;
     animation-name: entrada;
     animation-duration: 1s;
 }
@@ -62,7 +62,6 @@ span {
     margin-left: 110px;
 }
 header {
-    background-color: #16e094;
     padding: 10px;
     text-align: center;
     font-weight: bold;
@@ -79,7 +78,6 @@ nav {
     font-size: 20px;
 }
 footer {
-    background-color: #16e094;
     position: absolute;
     width: 98.7%;
     bottom: 0;
@@ -90,13 +88,14 @@ footer {
 }
 .link {
     text-decoration: none;
-    background-color: #16e0d9;
+    background-color: #16e094;
     color: white;
     padding: 10px;
     border-radius: 10px;
+    transition: 0.5s;
 }
 .link:hover {
-    background-color: #15b8b2;
+    background-color: #19ca86;
     color: rgb(224, 214, 214)
 }
 @keyframes entrada {
