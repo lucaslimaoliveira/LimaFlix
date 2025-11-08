@@ -12,7 +12,6 @@ body {
     margin: 0;
     top: 0;
     padding: 0;
-    background-color: white;
     animation-name: entrada;
     animation-duration: 1s;
 }
@@ -83,6 +82,10 @@ footer {
     bottom: 0;
     padding: 10px;
 }
+footer > p {
+    font-weight: bold;
+}
+
 #fim {
     margin-left: 40px;
 }

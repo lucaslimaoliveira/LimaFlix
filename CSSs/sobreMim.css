@@ -176,7 +176,7 @@ body > a {
     text-decoration: none;
     color: black;
     border: 2px black dashed;
-    left: 5px;
+    right: 15px;
     top: 5px;
     padding: 5px;
     border-radius: 10px;
