@@ -1,0 +1,106 @@
+name: LimaFlix - CI e Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Validar site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      # Usa apenas a biblioteca padrao do Python, sem pip install.
+      - name: Validar arquivos e referencias locais
+        shell: bash
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+
+          root = Path.cwd().resolve()
+          errors = []
+
+          class References(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs = []
+
+              def handle_starttag(self, tag, attrs):
+                  for name, value in attrs:
+                      if name in ("href", "src") and value:
+                          self.refs.append(value)
+
+          for required in ("index.html", "style.css"):
+              if not (root / required).is_file():
+                  errors.append(f"Arquivo obrigatorio ausente: {required}")
+
+          pages = [root / "index.html"] + sorted((root / "Htmls").rglob("*.html"))
+          for page in pages:
+              if not page.is_file():
+                  continue
+              parser = References()
+              parser.feed(page.read_text(encoding="utf-8"))
+              parser.close()
+              for ref in parser.refs:
+                  url = urlsplit(ref)
+                  if url.scheme or url.netloc or not url.path:
+                      continue
+                  path = unquote(url.path)
+                  target = (page.parent / path).resolve()
+                  if path.startswith("/") or not target.is_relative_to(root):
+                      errors.append(f"{page.relative_to(root)}: caminho fora do site: {ref}")
+                  elif not target.is_file():
+                      errors.append(f"{page.relative_to(root)}: arquivo ausente: {ref}")
+
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+          print(f"Validacao concluida: {len(pages)} paginas verificadas.")
+          PY
+
+      - name: Preparar arquivos para publicacao
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp index.html style.css _site/
+          cp -R Htmls CSSs imagens _site/
+
+      - name: Guardar pacote do site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    steps:
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Publicar site
+        uses: actions/deploy-pages@v4
